@@ -4,26 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanmay | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌙</button>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <h1 style="text-align:center;">Tanmay</h1>
-  <span id="typed-text" style="display:block; text-align:center;"></span>
+  <header>
+    <h1>Tanmay</h1>
+    <span id="typed-text"></span>
+    <a class="resume-btn-bottom" href="resume_tanmay1.pdf" download>📄 Download Resume</a>
+  </header>
 
-  <form id="contact-form" onsubmit="sendEmail(event)">
-    <input type="text" name="from_name" placeholder="Your Name" required />
-    <input type="email" name="email_id" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a tech enthusiast pursuing B.Tech in ECE (IoT) at MMMUT. I thrive on building smart, scalable, and impactful AI and IoT systems that bridge imagination with innovation.</p>
+  </section>
 
-  <div style="text-align:center;">
-    <a href="resume_tanmay1.pdf" download class="resume-btn">📄 Download Resume</a>
-  </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card" data-tilt>
+      <h3>Deepfake Detection Web App</h3>
+      <p>AI-powered app using CNN to detect fake faces with sci-fi UI.</p>
+      <p><a href="https://github.com/tanmay4518-07/deepfake-detector" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/posts/tanmay-t-141059296_deeplearning-ai-flask-activity-7346228458814885890-dAkk" target="_blank">LinkedIn Post</a></p>
+    </div>
+    <div class="project-card" data-tilt>
+      <h3>Leaf Disease Detection</h3>
+      <p>DL-based web app for plant health analysis.</p>
+      <p><a href="https://github.com/tanmay4518-07/leaf_disease_detection" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/posts/tanmay-t-141059296_machinelearning-deeplearning-computervision-activity-7342148932971524096-SY93" target="_blank">LinkedIn Post</a></p>
+    </div>
+    <div class="project-card" data-tilt>
+      <h3>Wine Quality Prediction</h3>
+      <p>ML model to predict wine quality using UCI dataset.</p>
+      <p><a href="https://github.com/tanmay4518-07/wine_quality_predictor" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/posts/tanmay-t-141059296_machinelearning-winequality-datascience-activity-7335276457763450881-_2HZ" target="_blank">LinkedIn Post</a></p>
+    </div>
+    <div class="project-card" data-tilt>
+      <h3>Biometric Lock (Arduino)</h3>
+      <p>Fingerprint-based smart lock using Arduino + Bluetooth.</p>
+      <p><a href="https://www.linkedin.com/posts/tanmay-t-141059296_iot-arduino-innovation-activity-7206304532522258434-0_nm" target="_blank">LinkedIn Post</a></p>
+    </div>
+  </section>
 
-  <footer>&copy; 2025 Tanmay</footer>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-box" data-tilt>
+      <h3>Languages & Tools</h3>
+      <p>Python, TensorFlow, Flask, HTML/CSS/JS, Arduino, ESP8266, Java, Photoshop</p>
+    </div>
+    <div class="skill-box" data-tilt>
+      <h3>Tech Interests</h3>
+      <p>AI, ML, Computer Vision, IoT, Embedded Systems, Drones</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" onsubmit="sendEmail(event)">
+      <input type="text" name="from_name" placeholder="Your Name" required />
+      <input type="email" name="email_id" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email: <a href="mailto:tanmayyy004@gmail.com">tanmayyy004@gmail.com</a></p>
+    <p>Phone: +91 8279555421</p>
+    <p><a href="https://github.com/tanmay4518-07" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/tanmay-t-141059296" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <footer>&copy; 2025 Tanmay.</footer>
+  <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">🔼</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
