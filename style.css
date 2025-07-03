@@ -4,39 +4,99 @@ body {
   background: #0f0f1c;
   color: white;
 }
+nav {
+  background: #0008;
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+.links a {
+  color: #0ff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+.theme-toggle {
+  background: #0ff;
+  color: #000;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('https://wallpapercave.com/wp/wp10979197.jpg') center/cover no-repeat;
+}
+.resume-btn-bottom {
+  margin-top: 2rem;
+  padding: 0.7rem 1.4rem;
+  background: #0ff;
+  color: #000;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+section {
+  padding: 4rem 10%;
+  text-align: center;
+}
+.project-card, .skill-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 700px;
+}
 form {
-  max-width: 400px;
+  max-width: 500px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 input, textarea {
-  padding: 10px;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 8px;
   border: none;
-  border-radius: 5px;
-  font-family: inherit;
+  font-family: 'Orbitron', sans-serif;
 }
 button {
-  background: cyan;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.75rem;
+  background: #0ff;
+  color: #000;
   font-weight: bold;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }
-.resume-btn {
-  display: inline-block;
-  margin-top: 2rem;
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
   padding: 10px 15px;
-  background: cyan;
-  color: black;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 50%;
+  background: #0ff;
+  color: #000;
+  cursor: pointer;
+  display: none;
 }
 footer {
   text-align: center;
   padding: 2rem;
-  color: gray;
+  background: #0f0f1c;
+  color: #94a3b8;
 }
