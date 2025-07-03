@@ -1,63 +1,92 @@
+:root {
+  --bg: linear-gradient(135deg, #0f0f1c, #1a1a2e);
+  --text: #ffffff;
+  --accent: #0ff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+}
+body.light {
+  --bg: #f2f2f2;
+  --text: #111;
+  --accent: #0077ff;
+  --card-bg: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 body {
   font-family: 'Orbitron', sans-serif;
-  margin: 0;
-  background: #0f0f1c;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  transition: all 0.4s ease;
 }
 nav {
-  background: #0008;
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   position: fixed;
-  width: 100%;
-  top: 0;
+  top: 0; width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 999;
+  align-items: center;
+  z-index: 1000;
 }
-.links a {
-  color: #0ff;
-  margin-left: 1.5rem;
+nav .links a {
+  color: var(--accent);
+  margin-left: 2rem;
   text-decoration: none;
   font-weight: bold;
 }
 .theme-toggle {
-  background: #0ff;
-  color: #000;
-  border: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 5px;
   cursor: pointer;
+  background: var(--accent);
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  color: #000;
+  font-weight: bold;
 }
 header {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  padding: 0 2rem;
   background: url('https://wallpapercave.com/wp/wp10979197.jpg') center/cover no-repeat;
+  backdrop-filter: blur(2px);
 }
-.resume-btn-bottom {
-  margin-top: 2rem;
-  padding: 0.7rem 1.4rem;
-  background: #0ff;
-  color: #000;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
+header h1 {
+  font-size: 3rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+#typed-text {
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 section {
   padding: 4rem 10%;
+}
+h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
   text-align: center;
 }
 .project-card, .skill-box {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   border: 1px solid rgba(0, 255, 255, 0.2);
   border-radius: 12px;
   padding: 1.5rem;
-  margin: 1rem auto;
-  max-width: 700px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+}
+.project-card h3, .skill-box h3 {
+  color: #facc15;
+}
+.project-card a {
+  color: #38bdf8;
+  text-decoration: underline;
 }
 form {
   max-width: 500px;
@@ -70,16 +99,26 @@ input, textarea {
   padding: 0.75rem;
   border-radius: 8px;
   border: none;
-  font-family: 'Orbitron', sans-serif;
 }
 button {
   padding: 0.75rem;
-  background: #0ff;
+  background: var(--accent);
   color: #000;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+.resume-btn-bottom {
+  display: block;
+  width: max-content;
+  margin: 2rem auto 0;
+  background: var(--accent);
+  color: #000;
+  padding: 0.7rem 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
 }
 #backToTop {
   position: fixed;
@@ -89,10 +128,11 @@ button {
   font-size: 16px;
   border: none;
   border-radius: 50%;
-  background: #0ff;
+  background: var(--accent);
   color: #000;
   cursor: pointer;
   display: none;
+  z-index: 9999;
 }
 footer {
   text-align: center;
