@@ -8,7 +8,7 @@ function sendEmail(e) {
       document.getElementById("contact-form").reset();
     }, (error) => {
       console.error("❌ EmailJS Error:", error);
-      alert("❌ Failed to send message. Please check your internet connection or try again later.\n\nError: " + error.text);
+      alert("❌ Failed to send message.\n" + error.text);
     });
 }
 
@@ -17,4 +17,20 @@ var typed = new Typed("#typed-text", {
   typeSpeed: 60,
   backSpeed: 40,
   loop: true
+});
+
+window.onscroll = function () {
+  const btn = document.getElementById("backToTop");
+  btn.style.display = window.scrollY > 200 ? "block" : "none";
+};
+
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+  max: 15,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.3
 });
