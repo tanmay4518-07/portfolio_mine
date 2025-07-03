@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanmay | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1 style="text-align:center;">Tanmay</h1>
+  <span id="typed-text" style="display:block; text-align:center;"></span>
+
+  <form id="contact-form" onsubmit="sendEmail(event)">
+    <input type="text" name="from_name" placeholder="Your Name" required />
+    <input type="email" name="email_id" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div style="text-align:center;">
+    <a href="resume_tanmay1.pdf" download class="resume-btn">📄 Download Resume</a>
+  </div>
+
+  <footer>&copy; 2025 Tanmay</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
