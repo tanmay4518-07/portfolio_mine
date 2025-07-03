@@ -1,9 +1,21 @@
+ /* === Global Styles === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Orbitron', sans-serif;
-  margin: 0;
   background: #0f0f1c;
   color: white;
+  scroll-behavior: smooth;
+  line-height: 1.6;
 }
+
+/* === Navigation === */
 nav {
   background: #0008;
   backdrop-filter: blur(10px);
@@ -13,6 +25,7 @@ nav {
   top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 999;
 }
 .links a {
@@ -29,14 +42,27 @@ nav {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* === Header === */
 header {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: url('https://wallpapercave.com/wp/wp10979197.jpg') center/cover no-repeat;
+  padding-top: 5rem;
+}
+header h1 {
+  font-size: 3rem;
+  color: #0ff;
+}
+header p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin-top: 1rem;
 }
 .resume-btn-bottom {
   margin-top: 2rem;
@@ -47,30 +73,65 @@ header {
   font-weight: bold;
   text-decoration: none;
 }
+
+/* === Sections === */
 section {
   padding: 4rem 10%;
   text-align: center;
 }
-.project-card, .skill-box {
+
+/* === Glass Cards: Projects, Skills, Contact Form === */
+.project-card,
+.skill-box,
+.contact form {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 1.5rem;
-  margin: 1rem auto;
+  margin: 2rem auto;
   max-width: 700px;
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.08);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
 }
+
+/* === Contact Section === */
+.contact {
+  background: linear-gradient(to bottom, #0f0f1c, #1a1a2e);
+}
+.contact h2 {
+  color: #0ff;
+  margin-bottom: 1.5rem;
+}
+.contact p a {
+  color: #0ff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.contact p {
+  margin: 0.4rem 0;
+}
+
 form {
   max-width: 500px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
 }
-input, textarea {
+input,
+textarea {
   margin: 0.5rem 0;
   padding: 0.75rem;
   border-radius: 8px;
   border: none;
   font-family: 'Orbitron', sans-serif;
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #bbb;
 }
 button {
   padding: 0.75rem;
@@ -80,7 +141,41 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 1rem;
 }
+
+/* === Fade In Animation on Scroll === */
+section.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Skills === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.skill-box {
+  text-align: center;
+}
+.skill-box img {
+  width: 60px;
+  height: 60px;
+}
+.skill-box span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* === Back To Top Button === */
 #backToTop {
   position: fixed;
   bottom: 25px;
@@ -93,10 +188,14 @@ button {
   color: #000;
   cursor: pointer;
   display: none;
+  z-index: 1000;
 }
+
+/* === Footer === */
 footer {
   text-align: center;
   padding: 2rem;
   background: #0f0f1c;
   color: #94a3b8;
 }
+
