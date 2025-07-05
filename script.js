@@ -79,6 +79,8 @@ function showNotification(message, type) {
     z-index: 10000;
     max-width: 400px;
     animation: slideInRight 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   `;
   
   // Add to DOM
@@ -113,30 +115,34 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Theme toggle functionality
+// Theme toggle functionality - Updated for dark theme as default
 function toggleTheme() {
   const body = document.body;
   const themeIcon = document.getElementById('theme-icon');
   
-  body.classList.toggle('dark');
+  body.classList.toggle('light');
   
-  // Update icon
-  if (body.classList.contains('dark')) {
-    themeIcon.className = 'fas fa-sun';
-    localStorage.setItem('theme', 'dark');
-  } else {
+  // Update icon - reversed logic since dark is default
+  if (body.classList.contains('light')) {
     themeIcon.className = 'fas fa-moon';
     localStorage.setItem('theme', 'light');
+  } else {
+    themeIcon.className = 'fas fa-sun';
+    localStorage.setItem('theme', 'dark');
   }
 }
 
-// Load saved theme
+// Load saved theme - Updated for dark theme as default
 document.addEventListener('DOMContentLoaded', function() {
   const savedTheme = localStorage.getItem('theme');
   const themeIcon = document.getElementById('theme-icon');
   
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark');
+  // Default to dark theme
+  if (savedTheme === 'light') {
+    document.body.classList.add('light');
+    themeIcon.className = 'fas fa-moon';
+  } else {
+    // Dark theme is default, so set sun icon
     themeIcon.className = 'fas fa-sun';
   }
 });
@@ -250,18 +256,18 @@ window.addEventListener('scroll', function() {
   });
 });
 
-// Navbar background on scroll
+// Navbar background on scroll - Updated for glassmorphism
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
   
   if (window.scrollY > 50) {
-    navbar.style.background = document.body.classList.contains('dark') 
-      ? 'rgba(17, 24, 39, 0.98)' 
-      : 'rgba(255, 255, 255, 0.98)';
+    navbar.style.background = document.body.classList.contains('light') 
+      ? 'rgba(255, 255, 255, 0.15)' 
+      : 'rgba(255, 255, 255, 0.05)';
   } else {
-    navbar.style.background = document.body.classList.contains('dark') 
-      ? 'rgba(17, 24, 39, 0.95)' 
-      : 'rgba(255, 255, 255, 0.95)';
+    navbar.style.background = document.body.classList.contains('light') 
+      ? 'rgba(255, 255, 255, 0.25)' 
+      : 'rgba(255, 255, 255, 0.05)';
   }
 });
 
@@ -362,7 +368,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Add CSS for error states
+// Resume download functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const resumeLink = document.querySelector('a[href="resume_tanmay1.pdf"]');
+  if (resumeLink) {
+    resumeLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = 'resume_tanmay1.pdf';
+      link.download = 'Tanmay_Tripathi_Resume.pdf';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Show notification
+      showNotification('📄 Resume download started!', 'success');
+    });
+  }
+});
+
+// Add CSS for error states and glassmorphism
 const style = document.createElement('style');
 style.textContent = `
   .contact-form input.error,
@@ -415,6 +444,23 @@ style.textContent = `
   
   .nav-link.active::after {
     width: 100%;
+  }
+  
+  /* Enhanced glassmorphism effects */
+  .glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Improved mobile glassmorphism */
+  @media (max-width: 768px) {
+    .nav-menu {
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+    }
   }
 `;
 document.head.appendChild(style);
