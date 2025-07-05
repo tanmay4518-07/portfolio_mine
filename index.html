@@ -3,114 +3,410 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tanmay | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Tanmay Tripathi | AI Engineer & Full-Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <nav>
-    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌙</button>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span>Tanmay</span>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="theme-toggle" onclick="toggleTheme()">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
-  <header>
-    <h1>Tanmay</h1>
-    <span id="typed-text"></span>
-    <a class="resume-btn-bottom" href="resume_tanmay1.pdf" download>📄 Download Resume</a>
-  </header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m <strong>Tanmay Tripathi</strong> — an aspiring AI engineer and full-stack developer driven by the ambition to create technology that solves real-world problems. With a strong foundation in <strong>Python, TensorFlow, Flask, and modern web technologies</strong>, I specialize in building intelligent systems that blend deep learning with intuitive design.
-  </p>
-  <p>
-    My portfolio spans diverse domains — from <strong>deepfake detection</strong> and <strong>plant disease recognition</strong> to <strong>AI-powered recommendation systems</strong> and <strong>smart security applications</strong>. I love turning complex problems into elegant, scalable solutions.
-  </p>
-  <p>
-    I’m constantly learning, iterating, and experimenting with the latest in AI, computer vision, and web tech — not just to build projects, but to build experiences that matter.
-  </p>
-  <p>
-    If you're looking for someone who codes with purpose and builds with passion — let's connect.
-  </p>
-</section>
-
-
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card" data-tilt>
-      <h3>Deepfake Detection Web App</h3>
-      <p>AI-powered app using CNN to detect fake faces with sci-fi UI.</p>
-      <p><a href="https://github.com/tanmay4518-07/deepfake-detector" target="_blank">GitHub</a> |
-         <a href="https://www.linkedin.com/posts/tanmay-t-141059296_deeplearning-ai-flask-activity-7346228458814885890-dAkk" target="_blank">LinkedIn Post</a></p>
-    </div>
-    <div class="project-card" data-tilt>
-      <h3>Leaf Disease Detection</h3>
-      <p>DL-based web app for plant health analysis.</p>
-      <p><a href="https://github.com/tanmay4518-07/leaf_disease_detection" target="_blank">GitHub</a> |
-         <a href="https://www.linkedin.com/posts/tanmay-t-141059296_machinelearning-deeplearning-computervision-activity-7342148932971524096-SY93" target="_blank">LinkedIn Post</a></p>
-    </div>
-    <div class="project-card" data-tilt>
-      <h3>Wine Quality Prediction</h3>
-      <p>ML model to predict wine quality using UCI dataset.</p>
-      <p><a href="https://github.com/tanmay4518-07/wine_quality_predictor" target="_blank">GitHub</a> |
-         <a href="https://www.linkedin.com/posts/tanmay-t-141059296_machinelearning-winequality-datascience-activity-7335276457763450881-_2HZ" target="_blank">LinkedIn Post</a></p>
-    </div>
-    <div class="project-card" data-tilt>
-      <h3>Biometric Lock (Arduino)</h3>
-      <p>Fingerprint-based smart lock using Arduino + Bluetooth.</p>
-      <p><a href="https://www.linkedin.com/posts/tanmay-t-141059296_iot-arduino-innovation-activity-7206304532522258434-0_nm" target="_blank">LinkedIn Post</a></p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Tanmay Tripathi</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span id="typed-text"></span>
+          </div>
+          <p class="hero-description">
+            Passionate AI engineer and full-stack developer creating intelligent solutions 
+            that bridge the gap between complex technology and real-world applications.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="resume_tanmay1.pdf" download class="btn btn-secondary">
+              <i class="fas fa-download"></i> Resume
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-container">
+            <div class="floating-elements">
+              <div class="floating-element" style="--delay: 0s">
+                <i class="fab fa-python"></i>
+              </div>
+              <div class="floating-element" style="--delay: 1s">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="floating-element" style="--delay: 2s">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="floating-element" style="--delay: 3s">
+                <i class="fas fa-robot"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill-box" data-tilt>
-      <h3>Languages & Tools</h3>
-      <p>Python, TensorFlow, Flask, HTML/CSS/JS, Arduino, ESP8266, Java, Photoshop, Git, GitHub, VScode, PyCharm</p>
-    </div>
-    <div class="skill-box" data-tilt>
-      <h3>Tech Interests</h3>
-      <p>AI, ML, Computer Vision, IoT, Embedded Systems, Drones</p>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Get to know me better</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="about-paragraph">
+            I'm <strong>Tanmay Tripathi</strong> — an aspiring AI engineer and full-stack developer 
+            driven by the ambition to create technology that solves real-world problems. With a strong 
+            foundation in <strong>Python, TensorFlow, Flask, and modern web technologies</strong>, 
+            I specialize in building intelligent systems that blend deep learning with intuitive design.
+          </p>
+          <p class="about-paragraph">
+            My portfolio spans diverse domains — from <strong>deepfake detection</strong> and 
+            <strong>plant disease recognition</strong> to <strong>AI-powered recommendation systems</strong> 
+            and <strong>smart security applications</strong>. I love turning complex problems into elegant, 
+            scalable solutions.
+          </p>
+          <p class="about-paragraph">
+            I'm constantly learning, iterating, and experimenting with the latest in AI, computer vision, 
+            and web tech — not just to build projects, but to build experiences that matter.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <h3>10+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="stat">
+              <h3>3+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat">
+              <h3>100%</h3>
+              <p>Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form" onsubmit="sendEmail(event)">
-      <input type="text" name="from_name" placeholder="Your Name" required />
-      <input type="email" name="email_id" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Email: <a href="mailto:tanmayyy004@gmail.com" style="color: #38bdf8;">tanmayyy004@gmail.com</a></p>
-    <p>Phone: +91 8279555421</p>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Some of my recent work</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/tanmay4518-07/deepfake-detector" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/posts/tanmay-t-141059296_deeplearning-ai-flask-activity-7346228458814885890-dAkk" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">CNN</span>
+              <span class="tech-tag">Flask</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Deepfake Detection Web App</h3>
+            <p class="project-description">
+              AI-powered application using Convolutional Neural Networks to detect fake faces 
+              with an intuitive sci-fi inspired user interface.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/tanmay4518-07/leaf_disease_detection" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/posts/tanmay-t-141059296_machinelearning-deeplearning-computervision-activity-7342148932971524096-SY93" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Deep Learning</span>
+              <span class="tech-tag">Computer Vision</span>
+              <span class="tech-tag">Web App</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Leaf Disease Detection</h3>
+            <p class="project-description">
+              Deep learning-based web application for comprehensive plant health analysis 
+              and disease detection using advanced computer vision techniques.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/tanmay4518-07/wine_quality_predictor" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/posts/tanmay-t-141059296_machinelearning-winequality-datascience-activity-7335276457763450881-_2HZ" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">Data Science</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Wine Quality Prediction</h3>
+            <p class="project-description">
+              Machine learning model to predict wine quality using UCI dataset with 
+              comprehensive data analysis and feature engineering.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://www.linkedin.com/posts/tanmay-t-141059296_iot-arduino-innovation-activity-7206304532522258434-0_nm" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">IoT</span>
+              <span class="tech-tag">Bluetooth</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Biometric Smart Lock</h3>
+            <p class="project-description">
+              Fingerprint-based smart security lock system using Arduino and Bluetooth 
+              connectivity for enhanced home security solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <div style="margin-bottom: 1rem;">
-      <a href="https://github.com/tanmay4518-07" target="_blank" style="margin-right: 1rem; filter: brightness(10);">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" height="30" />
-      </a>
-      <a href="https://linkedin.com/in/tanmay-t-141059296" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" height="30" />
-      </a>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">Technologies I work with</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Programming Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C++</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>AI & Machine Learning</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">OpenCV</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Web Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3>Hardware & IoT</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">ESP8266</span>
+            <span class="skill-tag">Raspberry Pi</span>
+            <span class="skill-tag">Sensors</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Tools & Software</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">PyCharm</span>
+            <span class="skill-tag">Photoshop</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Interests</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Embedded Systems</span>
+            <span class="skill-tag">Drones</span>
+            <span class="skill-tag">Innovation</span>
+          </div>
+        </div>
+      </div>
     </div>
-    &copy; 2025 Tanmay. All rights reserved.
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Let's work together</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:tanmayyy004@gmail.com">tanmayyy004@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <span>+91 8279555421</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <span>India</span>
+            </div>
+          </div>
+        </div>
+        <form id="contact-form" class="contact-form" onsubmit="sendEmail(event)">
+          <div class="form-group">
+            <input type="text" name="from_name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email_id" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2025 Tanmay Tripathi. All rights reserved.</p>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/tanmay4518-07" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/tanmay-t-141059296" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">🔼</button>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
