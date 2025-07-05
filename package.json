@@ -1,0 +1,21 @@
+{
+  "name": "tanmay-tripathi-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Tanmay Tripathi",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server",
+    "start": "live-server"
+  },
+  "keywords": [
+    "portfolio",
+    "AI",
+    "full-stack",
+    "developer"
+  ],
+  "author": "Tanmay Tripathi",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
