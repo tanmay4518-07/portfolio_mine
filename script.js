@@ -333,6 +333,35 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Initialize 3D Tilt Effects
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize tilt for project cards
+  const projectCards = document.querySelectorAll('.project-card[data-tilt]');
+  projectCards.forEach(card => {
+    VanillaTilt.init(card, {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2,
+      perspective: 1000,
+      scale: 1.02
+    });
+  });
+
+  // Initialize tilt for skill categories
+  const skillCategories = document.querySelectorAll('.skill-category[data-tilt]');
+  skillCategories.forEach(category => {
+    VanillaTilt.init(category, {
+      max: 10,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.15,
+      perspective: 1000,
+      scale: 1.05
+    });
+  });
+});
+
 // Add CSS for error states
 const style = document.createElement('style');
 style.textContent = `

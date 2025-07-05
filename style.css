@@ -357,36 +357,10 @@ body.dark .hero::before {
   line-height: 1.7;
 }
 
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.stat {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--bg-primary);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-light);
-}
-
-.stat h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.stat p {
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
 /* Projects Section */
 .projects {
   padding: 6rem 0;
+  perspective: 1000px;
 }
 
 .projects-grid {
@@ -402,21 +376,30 @@ body.dark .hero::before {
   box-shadow: var(--shadow-light);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-large);
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .project-image {
   position: relative;
   height: 200px;
-  background: var(--gradient-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail {
+  transform: scale(1.1);
 }
 
 .project-overlay {
@@ -453,12 +436,13 @@ body.dark .hero::before {
   color: var(--text-primary);
   text-decoration: none;
   transition: all 0.3s ease;
+  transform: translateZ(20px);
 }
 
 .project-link:hover {
   background: var(--primary-color);
   color: white;
-  transform: scale(1.1);
+  transform: translateZ(20px) scale(1.1);
 }
 
 .project-tech {
@@ -477,10 +461,12 @@ body.dark .hero::before {
   border-radius: 1rem;
   font-size: 0.75rem;
   font-weight: 500;
+  backdrop-filter: blur(10px);
 }
 
 .project-content {
   padding: 1.5rem;
+  transform: translateZ(10px);
 }
 
 .project-title {
@@ -499,6 +485,7 @@ body.dark .hero::before {
 .skills {
   padding: 6rem 0;
   background: var(--bg-secondary);
+  perspective: 1000px;
 }
 
 .skills-grid {
@@ -515,11 +502,13 @@ body.dark .hero::before {
   box-shadow: var(--shadow-light);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-10px) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .skill-icon {
@@ -533,12 +522,19 @@ body.dark .hero::before {
   margin: 0 auto 1.5rem;
   font-size: 1.5rem;
   color: white;
+  transform: translateZ(20px);
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover .skill-icon {
+  transform: translateZ(30px) rotateY(-5deg);
 }
 
 .skill-category h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: var(--text-primary);
+  transform: translateZ(10px);
 }
 
 .skill-tags {
@@ -546,6 +542,7 @@ body.dark .hero::before {
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
+  transform: translateZ(5px);
 }
 
 .skill-tag {
@@ -556,6 +553,13 @@ body.dark .hero::before {
   font-size: 0.875rem;
   font-weight: 500;
   border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover .skill-tag {
+  background: var(--primary-color);
+  color: white;
+  transform: translateZ(10px);
 }
 
 /* Contact Section */
@@ -716,6 +720,11 @@ body.dark .hero::before {
   box-shadow: var(--shadow-large);
 }
 
+/* 3D Tilt Effects */
+.js-tilt-glare {
+  border-radius: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
@@ -778,11 +787,6 @@ body.dark .hero::before {
     font-size: 2rem;
   }
 
-  .about-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -815,6 +819,12 @@ body.dark .hero::before {
     width: 50px;
     height: 50px;
     font-size: 1.25rem;
+  }
+
+  /* Disable 3D effects on mobile for better performance */
+  .project-card:hover,
+  .skill-category:hover {
+    transform: translateY(-5px);
   }
 }
 
